@@ -3,9 +3,14 @@
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
 
-import { captureLeadAction, initialLeadActionState } from "@/app/actions";
+import { captureLeadAction } from "@/app/actions";
 import { Button } from "@/components/ui/button";
 import { CONFIG } from "@/lib/config";
+
+const initialLeadActionState = {
+  status: "idle",
+  message: "",
+} as const;
 
 function SubmitButton() {
   const { pending } = useFormStatus();

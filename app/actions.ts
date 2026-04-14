@@ -8,14 +8,9 @@ import { Resend } from "resend";
 import WelcomeEmail from "@/emails/welcome";
 import { CONFIG } from "@/lib/config";
 
-export type LeadActionState = {
+type LeadActionState = {
   status: "idle" | "success" | "error";
   message: string;
-};
-
-export const initialLeadActionState: LeadActionState = {
-  status: "idle",
-  message: "",
 };
 
 export async function captureLeadAction(
