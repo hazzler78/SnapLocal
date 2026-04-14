@@ -111,7 +111,8 @@ export async function captureLeadAction(
         console.error("Resend API returned an error:", result.error);
         return {
           status: "error",
-          message: `Lead saved, but welcome email failed: ${result.error.message}`,
+          message:
+            "Thanks! Your request is received. We will email your preview shortly.",
         };
       }
     } catch (error) {
@@ -120,7 +121,8 @@ export async function captureLeadAction(
         error instanceof Error ? error.message : String(error);
       return {
         status: "error",
-        message: `Lead saved, but welcome email failed: ${errorMessage}`,
+        message:
+          "Thanks! Your request is received. We will email your preview shortly.",
       };
     }
 
