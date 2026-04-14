@@ -2,7 +2,7 @@
 
 import { CheckCircle2, Sparkles } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { CONFIG } from "@/lib/config";
@@ -17,7 +17,7 @@ const routeByType: Record<BusinessType, string> = {
   other: "/demos/pizza-hildesheim",
 };
 
-export default function GeneratorPage() {
+function GeneratorPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [businessType, setBusinessType] = useState<BusinessType>("pizza");
@@ -248,5 +248,23 @@ export default function GeneratorPage() {
         ) : null}
       </div>
     </main>
+  );
+}
+
+export default function GeneratorPage() {
+  return (
+    <Suspense
+      fallback={
+        <main className="min-h-screen bg-zinc-950 text-white">
+          <div className="container py-10 md:py-14">
+            <div className="mx-auto max-w-3xl rounded-2xl border border-zinc-800 bg-zinc-900 p-6 text-center">
+              <p className="text-sm text-zinc-300">Loading generator...</p>
+            </div>
+          </div>
+        </main>
+      }
+    >
+      <GeneratorPageContent />
+    </Suspense>
   );
 }
