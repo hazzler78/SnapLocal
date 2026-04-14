@@ -35,6 +35,33 @@ export async function captureLeadAction(
       createdAt: new Date().toISOString(),
     };
 
+    // Optional Telegram notification for instant lead alerts.
+    const telegramBotToken = process.env.TELEGRAM_BOT_TOKEN;
+    const telegramChatId = process.env.TELEGRAM_CHAT_ID;
+    if (telegramBotToken && telegramChatId) {
+      try {
+        const telegramText = [
+          "New SnapLocal lead",
+          `Name: ${name}`,
+          `Email: ${email}`,
+          `Business type: ${businessType}`,
+          `City: ${city}`,
+          `Created: ${lead.createdAt}`,
+        ].join("\n");
+
+        await fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chat_id: telegramChatId,
+            text: telegramText,
+          }),
+        });
+      } catch (error) {
+        console.error("Telegram lead notify failed:", error);
+      }
+    }
+
     // MVP persistence: write locally in dev, fallback to logs in Vercel runtime.
     if (process.env.VERCEL) {
       console.log("Lead captured (vercel):", lead);
