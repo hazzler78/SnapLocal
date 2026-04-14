@@ -54,7 +54,7 @@ export default function GymDemoPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-zinc-950" />
         <div className="container relative py-12 md:py-20">
           <p className="inline-flex rounded-full border border-cyan-300/40 bg-cyan-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-cyan-200">
-            Modern fitness studio in Hildesheim
+            Modern fitness studio in {city}
           </p>
           <h1 className="mt-4 max-w-3xl text-4xl font-black leading-tight md:text-6xl">{businessName}</h1>
           <p className="mt-4 max-w-2xl text-zinc-200 md:text-lg">
@@ -96,7 +96,7 @@ export default function GymDemoPage() {
           <h2 className="text-2xl font-bold md:text-3xl">What members say</h2>
           <div className="mt-5 space-y-3 text-sm text-zinc-200">
             <p className="rounded-lg bg-zinc-900 p-3">"The coaching quality is top-tier and classes are always packed with energy." - Jan P.</p>
-            <p className="rounded-lg bg-zinc-900 p-3">"Best gym in Hildesheim for both beginners and advanced athletes." - Sara K.</p>
+            <p className="rounded-lg bg-zinc-900 p-3">"Best gym in {city} for both beginners and advanced athletes." - Sara K.</p>
           </div>
         </div>
       </section>

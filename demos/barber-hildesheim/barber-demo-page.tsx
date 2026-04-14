@@ -49,7 +49,7 @@ export default function BarberDemoPage() {
         <div className="absolute inset-0 bg-cover bg-center opacity-40" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1800&q=80')" }} />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-zinc-950" />
         <div className="container relative py-12 md:py-20">
-          <p className="inline-flex rounded-full border border-amber-300/40 bg-amber-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-amber-200">Modern barber shop in Hildesheim</p>
+          <p className="inline-flex rounded-full border border-amber-300/40 bg-amber-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-amber-200">Modern barber shop in {city}</p>
           <h1 className="mt-4 max-w-3xl text-4xl font-black leading-tight md:text-6xl">{businessName}</h1>
           <p className="mt-4 max-w-2xl text-zinc-200 md:text-lg">{shortDescription} Serving {city}.</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -80,7 +80,7 @@ export default function BarberDemoPage() {
         <div className="container py-12 md:py-16">
           <h2 className="text-2xl font-bold md:text-3xl">Testimonials</h2>
           <div className="mt-5 space-y-3 text-sm text-zinc-200">
-            <p className="rounded-lg bg-zinc-900 p-3">"Best fade in Hildesheim, always on time." - Dennis F.</p>
+            <p className="rounded-lg bg-zinc-900 p-3">"Best fade in {city}, always on time." - Dennis F.</p>
             <p className="rounded-lg bg-zinc-900 p-3">"Great vibe, clean tools, and sharp beard line every time." - Karim A.</p>
           </div>
         </div>

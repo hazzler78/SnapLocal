@@ -48,7 +48,7 @@ export default function CleaningDemoPage() {
         <div className="absolute inset-0 bg-cover bg-center opacity-40" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1800&q=80')" }} />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-zinc-950" />
         <div className="container relative py-12 md:py-20">
-          <p className="inline-flex rounded-full border border-emerald-300/40 bg-emerald-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-emerald-200">Professional house cleaning in Hildesheim</p>
+          <p className="inline-flex rounded-full border border-emerald-300/40 bg-emerald-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-emerald-200">Professional house cleaning in {city}</p>
           <h1 className="mt-4 max-w-3xl text-4xl font-black leading-tight md:text-6xl">{businessName}</h1>
           <p className="mt-4 max-w-2xl text-zinc-200 md:text-lg">{shortDescription} Serving {city} with reliable teams.</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">

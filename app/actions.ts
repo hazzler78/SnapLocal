@@ -74,23 +74,33 @@ export async function captureLeadAction(
 
     try {
       const resend = new Resend(apiKey);
-      await resend.emails.send({
+      const result = await resend.emails.send({
         from: "SnapLocal <onboarding@resend.dev>",
         to: email,
         subject: "Welcome to SnapLocal - Your free website preview",
         react: WelcomeEmail({ name, businessType, city }),
       });
+      if (result.error) {
+        console.error("Resend API returned an error:", result.error);
+        return {
+          status: "error",
+          message: `Lead saved, but welcome email failed: ${result.error.message}`,
+        };
+      }
     } catch (error) {
       console.error("Resend delivery failed:", error);
+      const errorMessage =
+        error instanceof Error ? error.message : String(error);
       return {
         status: "error",
-        message: "Lead saved, but welcome email could not be sent.",
+        message: `Lead saved, but welcome email failed: ${errorMessage}`,
       };
     }
 
     return {
       status: "success",
-      message: "Thanks! Your preview request is in and your welcome email is sent.",
+      message:
+        "Email sent! Check your inbox (and spam). Your preview request is in.",
     };
   } catch (error) {
     console.error("captureLeadAction failed:", error);

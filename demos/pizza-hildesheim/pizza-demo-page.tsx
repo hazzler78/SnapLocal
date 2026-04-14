@@ -84,7 +84,7 @@ export default function PizzaDemoPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-zinc-950" />
         <div className="container relative py-12 md:py-20">
           <p className="inline-flex rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide">
-            Authentic Italian pizza in Hildesheim
+            Authentic Italian pizza in {city}
           </p>
           <h1 className="mt-4 max-w-3xl text-4xl font-black leading-tight md:text-6xl">
             {businessName}

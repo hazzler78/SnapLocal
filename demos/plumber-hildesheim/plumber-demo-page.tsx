@@ -27,7 +27,7 @@ export default function PlumberDemoPage() {
   const city = searchParams.get("city") || CONFIG.DEFAULT_CITY;
   const shortDescription =
     searchParams.get("description") ||
-    "Fast local emergency plumbers in Hildesheim. We stop water damage quickly and fix the root cause.";
+    "Fast local emergency plumbers. We stop water damage quickly and fix the root cause.";
   const businessAddress = searchParams.get("address") || ADDRESS;
   const whatsappNumber = CONFIG.WHATSAPP_NUMBER.replace(/[^\d]/g, "");
 
