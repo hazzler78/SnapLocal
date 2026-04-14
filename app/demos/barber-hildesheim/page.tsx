@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 import BarberDemoPage from "@/demos/barber-hildesheim/barber-demo-page";
 
@@ -27,5 +28,9 @@ export const metadata: Metadata = {
 };
 
 export default function BarberHildesheimPage() {
-  return <BarberDemoPage />;
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-zinc-950" />}>
+      <BarberDemoPage />
+    </Suspense>
+  );
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 import PlumberDemoPage from "@/demos/plumber-hildesheim/plumber-demo-page";
 
@@ -27,5 +28,9 @@ export const metadata: Metadata = {
 };
 
 export default function PlumberHildesheimPage() {
-  return <PlumberDemoPage />;
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-zinc-950" />}>
+      <PlumberDemoPage />
+    </Suspense>
+  );
 }

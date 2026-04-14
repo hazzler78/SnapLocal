@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 import GymDemoPage from "@/demos/gym-hildesheim/gym-demo-page";
 
@@ -27,5 +28,9 @@ export const metadata: Metadata = {
 };
 
 export default function GymHildesheimPage() {
-  return <GymDemoPage />;
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-zinc-950" />}>
+      <GymDemoPage />
+    </Suspense>
+  );
 }
