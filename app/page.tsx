@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import LeadCaptureForm from "@/components/lead-capture-form";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
@@ -28,6 +29,7 @@ export default function Home() {
             <Link href="/demos">View example demos</Link>
           </Button>
         </div>
+        <LeadCaptureForm />
       </div>
     </main>
   );
