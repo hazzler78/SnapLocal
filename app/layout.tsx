@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 
 import SharedNav from "@/components/shared-nav";
 
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <SharedNav />
         {children}
+        <Analytics />
       </body>
     </html>
   );
